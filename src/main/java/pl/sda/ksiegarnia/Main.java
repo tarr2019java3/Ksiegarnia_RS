@@ -1,41 +1,39 @@
 package pl.sda.ksiegarnia;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.ArrayList;
-import java.util.List;
-
-    public class Main {
+public class Main {
 
         public static void main(String[] args) {
+
+            Category category =new Category("Fantastyka");
+            Category category1= new Category("Poezja Epicka");
+
+
             Author author = new Author("Terry", "Pratchett");
             Author author1 = new Author("Andrzej", "Sapkowski");
             Author author2 = new Author("Dante", "Alighieri");
 
-            Book book =new Book("Straż! Straż!")
 
-            ObjectMapper objectMapper = new ObjectMapper();
- ;
-//
-//            List<Student> studentList = new ArrayList<>();
-//            studentList.add(student);
-//            studentList.add(student1);
-//            studentList.add(student2);
-//            studentList.add(student3);
-//            studentList.add(student4);
-//            studentList.add(student5);
-//
-//            JSONUtils jsonUtils= new JSONUtils();
-//            jsonUtils.writeList("ListaStudentow.json", studentList);
-//            jsonUtils.readList("ListaStudentow.json");
+            Book book = new Book("Straż! Straż!", author,category );
+            Book book1 = new Book("Krew Elfów", author1, category );
+            Book book2 = new Book("Divine Comedy", author2, category1);
+
+
+
+
+            List<Book> booksList = new ArrayList<>();
+            booksList.add(book);
+            booksList.add(book1);
+            booksList.add(book2);
+
+
+            JSONUtils jsonUtils= new JSONUtils();
+            jsonUtils.writeList("Spis_Książek.json", booksList);
+            jsonUtils.readList("Spis_Książek.json");
 
 
         }
     }
 
-
-
-}
